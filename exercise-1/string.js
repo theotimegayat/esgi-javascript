@@ -36,14 +36,14 @@ function camelCase(str) {
 
 console.log(camelCase("Je Fais Des TeSts"));
 
-function snakeCase(str) {
+function snake_case(str) {
     if (typeof str !== "string" || !str) {
         return "";
     }
     return str.toLowerCase().split(" ").join("_");
 }
 
-console.log(snakeCase("Je Fais Des TeSts"));
+console.log(snake_case("Je Fais Des TeSts"));
 
 function leet(str) {
     if (typeof str !== "string" || !str) {
