@@ -44,3 +44,10 @@ function snakeCase(str) {
 }
 
 console.log(snakeCase("Je Fais Des TeSts"));
+
+function leet(str) {
+    if (typeof str !== "string" || !str) {
+        return "";
+    }
+
+}
