@@ -26,3 +26,21 @@ console.log(capitalize("test Test tst"));
 console.log(capitalize(""));
 console.log(capitalize(null));
 console.log(capitalize({}));
+
+function camelCase(str) {
+    if (typeof str !== "string" || !str) {
+        return "";
+    }
+    return capitalize(str).split(" ").join('');
+}
+
+console.log(camelCase("Je Fais Des TeSts"));
+
+function snakeCase(str) {
+    if (typeof str !== "string" || !str) {
+        return "";
+    }
+    return str.toLowerCase().split(" ").join("_");
+}
+
+console.log(snakeCase("Je Fais Des TeSts"));
