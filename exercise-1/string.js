@@ -41,7 +41,7 @@ function camelCase(str) {
     }).join("");
 }
 
-console.log(camelCase("Je Fais_Des TeSts"));
+//console.log(camelCase("Je Fais_Des TeSts"));
 
 function snake_case(str) {
     if (typeof str !== "string" || !str) {
@@ -50,11 +50,13 @@ function snake_case(str) {
     return str.toLowerCase().split(" ").join("_");
 }
 
-console.log(snake_case("Je Fais_Des TeSts"));
+//console.log(snake_case("Je Fais_Des TeSts"));
 
 function leet(str) {
     if (typeof str !== "string" || !str) {
         return "";
     }
-
+    return str.replace(/a/g,"4").replace(/o/g,"0");
 }
+
+console.log(leet("anaconda"));
