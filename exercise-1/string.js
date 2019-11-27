@@ -82,7 +82,7 @@ function leet(str) {
     })
 }
 
-console.log(leet("anaconda"));
+//console.log(leet("anaconda"));
 
 function verlan(str) {
     if (typeof str !== "string" || !str) {
@@ -93,4 +93,22 @@ function verlan(str) {
     }).join(" ");
 }
 
-console.log(verlan("Hello world"));
+//console.log(verlan("Hello world"));
+
+function yoda(str) {
+    if (typeof str !== "string" || !str) {
+        return "";
+    }
+    return str.split(' ').reverse().join(' ');
+}
+
+//console.log(yoda("Hello world"));
+
+function vig(str) {
+    if (typeof str !== "string" || !str) {
+        return "";
+    }
+    return
+}
+
+console.log(vig("Hello world"));
