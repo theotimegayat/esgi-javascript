@@ -50,13 +50,13 @@ function snake_case(str) {
     return str.toLowerCase().split(" ").join("_");
 }
 
-//console.log(snake_case("Je Fais_Des TeSts"));
+console.log(snake_case("Je Fais_Des TeSts"));
 
 function leet(str) {
     if (typeof str !== "string" || !str) {
         return "";
     }
-    return str.replace(/a/g,"4").replace(/o/g,"0");
+    return str.replace(/a/g,"4").replace(/o/g,"0").replace(/e/g, "3");
 }
 
-console.log(leet("anaconda"));
+console.log(leet("anacondae"));
