@@ -3,7 +3,7 @@ function ucfirst(str){
 
     return str[0].toUpperCase() + str.substring(1);
 }
-
+/*
 console.log(ucfirst("test"));
 console.log(ucfirst("Test"));
 console.log(ucfirst(" test"));
@@ -11,14 +11,14 @@ console.log(ucfirst("test Test tst"));
 console.log(ucfirst(""));
 console.log(ucfirst(null));
 console.log(ucfirst({}));
-
+*/
 function capitalize(str) {
     if(typeof str !=="string" || !str) return '';
     return str.toLowerCase().split(" ").map(function(item) {
         return ucfirst(item);
     }).join(" ");
 }
-
+/*
 console.log(capitalize("test"));
 console.log(capitalize("Test"));
 console.log(capitalize(" test"));
@@ -32,9 +32,16 @@ function camelCase(str) {
         return "";
     }
     return capitalize(str).split(" ").join('');
+}*/
+
+function camelCase(str) {
+    if(typeof str !== "string" || !str ) return '';
+    return str.toLowerCase().split(/[^a-zA-Z0-9]/g).map(function(item){
+        return ucfirst(item);
+    }).join("");
 }
 
-console.log(camelCase("Je Fais Des TeSts"));
+console.log(camelCase("Je Fais_Des TeSts"));
 
 function snake_case(str) {
     if (typeof str !== "string" || !str) {
@@ -43,7 +50,7 @@ function snake_case(str) {
     return str.toLowerCase().split(" ").join("_");
 }
 
-console.log(snake_case("Je Fais Des TeSts"));
+console.log(snake_case("Je Fais_Des TeSts"));
 
 function leet(str) {
     if (typeof str !== "string" || !str) {
