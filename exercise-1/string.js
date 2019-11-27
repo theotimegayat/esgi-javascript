@@ -50,13 +50,25 @@ function snake_case(str) {
     return str.toLowerCase().split(" ").join("_");
 }
 
-console.log(snake_case("Je Fais_Des TeSts"));
+//console.log(snake_case("Je Fais_Des TeSts"));
 
 function leet(str) {
     if (typeof str !== "string" || !str) {
         return "";
     }
-    return str.replace(/a/g,"4").replace(/e/g, "3").replace(/i/g,"1").replace(/o/g,"0").replace(/u/g,"(_)").replace(/y/g,"7");
+    return str.replace(/a/g, "4").replace(/e/g, "3").replace(/i/g,"1").replace(/o/g,"0").replace(/u/g,"(_)").replace(/y/g,"7");
 }
 
-console.log(leet("anaconda"));
+//console.log(leet("anaconda"));
+
+function verlan(str) {
+    if (typeof str !== "string" || !str) {
+        return "";
+    }
+    for (var i = str.length - 1; i >= 0; i--) {
+        str += str[i];
+    }
+    return str;
+}
+
+console.log(verlan("Hello"));
