@@ -56,7 +56,7 @@ function leet(str) {
     if (typeof str !== "string" || !str) {
         return "";
     }
-    return str.replace(/a/g,"4").replace(/o/g,"0").replace(/e/g, "3");
+    return str.replace(/a/g,"4").replace(/e/g, "3").replace(/i/g,"1").replace(/o/g,"0").replace(/u/g,"(_)").replace(/y/g,"7");
 }
 
-console.log(leet("anacondae"));
+console.log(leet("anaconda"));
