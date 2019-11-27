@@ -66,7 +66,7 @@ function verlan(str) {
         return "";
     }
     for (var i = str.length - 1; i >= 0; i--) {
-        str += str[i];
+        str === str[i];
     }
     return str;
 }
