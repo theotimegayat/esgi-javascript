@@ -135,3 +135,26 @@ function vig(str, code){
     }).join('');
 }
 console.log(vig("Hello world", "foo"));
+
+function prop_access(objectParam, path) {
+    if (typeof path !== "string" || typeof objectParam !== "object") {
+        return "";
+    }
+
+    if (!path.length) {
+        return objectParam;
+    }
+
+    let objectResult = objectParam;
+    let error = "";
+    path = path.split('.');
+
+    for (let i = 0; i < path.length; i++) {
+        objectResult = objectResult[path[i]];
+        if (!objectResult) {
+            error = `${path.join(".")} not exist`;
+        }
+    }
+
+    return objectResult ? objectResult : error;
+}
