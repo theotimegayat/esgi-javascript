@@ -134,4 +134,4 @@ function vig(str, code){
         return String.fromCharCode(cryptedChar);
     }).join('');
 }
-console.log(vig("Hello world"));
+console.log(vig("Hello world", "foo"));
