@@ -1,24 +1,11 @@
-function type_check_v1(arg1, arg2) {
-    if (!arg1 || !arg2) return;
-
-    if (arg2 === "null") {
-        return arg1 === null ? true : false;
+function type_check_v1(value, type) {
+    switch(typeof value){
+        case 'object':
+            if(Array.isArray(value)) return type == "array";
+            if(value === null) return type == "null";
+        default:
+            return typeof value === type;
     }
-
-    if (arg2 === "object") {
-        if (arg1 === null) {
-            return false;
-        }
-        if (Array.isArray(arg1)) {
-            return false;
-        }
-    }
-
-    if (arg2 === "array") {
-        return Array.isArray(arg1) ? true : false;
-    }
-
-    return typeof arg1 === arg2;
 }
 
 function type_check_v2(arg1, object) {
