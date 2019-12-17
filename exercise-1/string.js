@@ -136,7 +136,7 @@ function vig(str, code){
 }
 console.log(vig("Hello world", "foo"));
 
-function prop_access(objectParam, path) {
+/*function prop_access(objectParam, path) {
     if (typeof path !== "string" || typeof objectParam !== "object") {
         return "";
     }
@@ -157,4 +157,23 @@ function prop_access(objectParam, path) {
     }
 
     return objectResult ? objectResult : error;
+}*/
+
+function prop_access(object, path) {
+    if (path == null || path === '')
+        return object;
+    if (object == null) {
+        console.log(path + ' not exist');
+        return;
+    }
+    const props = path.split('.');
+    let property = object;
+    props.forEach(function (prop) {
+        if (!property.hasOwnProperty(prop)) {
+            console.log(path + ' not exist');
+            return;
+        }
+        property = property[prop];
+    });
+    return property;
 }

@@ -8,29 +8,17 @@ function type_check_v1(value, type) {
     }
 }
 
-function type_check_v2(arg1, object) {
-
-    if (type_check_v1(arg1, "object")) {
-        if(object.hasOwnProperty('type') && object.type === 'object') {
-            return true;
+function type_check_v2(value, conf) {
+    for(key in conf){
+        switch(key){
+            case 'type':
+                if(!type_check_v1(value, conf[key])) return false;
+            case 'value':
+                //... return false;
+            case 'enum':
+                //... return false;
         }
     }
-
-    if(type_check_v1(arg1, "string")) {
-        if(object.hasOwnProperty('type') && object.type === "string") {
-            if(object.hasOwnProperty('value') && object.value === arg1) {
-                return true;
-            }
-        }
-    }
-
-    if(type_check_v1(arg1, "number")) {
-        if(object.hasOwnProperty('enum') && object.enum.includes(arg1)){
-            return true
-        }
-    }
-
-    return false;
 }
 
 //console.log(type_check_v2({ prop1: 1 }, { type: "object" }));
